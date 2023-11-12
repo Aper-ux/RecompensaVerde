@@ -1,5 +1,4 @@
 Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/APURAALEX2.0.csv", function(err, data) {
-    // Graficar una linea de tendencia para 'COMUNES KG', PAPEL_Y_CARTON_KG, VIDRIO_KG en eje y vs 'GESTION' en eje x
     var datos = [
         {
             x: data.map(function(d) { return d.SERIE; }),
@@ -113,7 +112,6 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
         },
     ];
 
-    // Configurar el diseño del gráfico
     var configuracion = {
         title: 'Grafica de lineas de tendencia',
         xaxis: {
@@ -124,23 +122,58 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
         }
     };
 
-    // Dibujar el gráfico de líneas
     Plotly.newPlot('grafico1', datos, configuracion);
 });
 
 Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/CAKE_RECOLECCION.csv", function(err, data) {
-    // Graficar una torta con COMUNES_KG,PAPEL_Y_CARTON_KG,VIDRIO_KG,METAL_KG,PLASTICOS_KG,PATOGENOS_KG,PODA_KG,ORGANICO_KG,DIFERENCIADO_PARTICULAR_KG,PAPEL_PLASTICO_KG
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
     var datos = [{
-        values: data.map(function(d) { return d.COMUNES_KG; }),
-        labels: data.map(function(d) { return d.SERIE; }),
+        values: valores,
+        labels: categorias,
         type: 'pie'
     }];
 
-    // Configurar el diseño de la torta
     var configuracion = {
-        title: 'Grafica de torta',
+        title: 'Grafica de torta'
     };
 
-    // Dibujar la torta
     Plotly.newPlot('grafico2', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PREDICCION_AZUL_MES.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var datos = [{
+        x: data.map(function(d) { return d.MES; }),
+        y: data.map(function(d) { return d.PREDICCION; }),
+        type: 'scatter',
+        mode: 'lines',
+        name: 'PREDICCION',
+        line: {
+            color: 'BLUE',
+            width: 3
+        }
+    }];
+
+    var configuracion = {
+        title: 'Grafica de lineas de tendencia',
+        xaxis: {
+            title: 'TIEMPO'
+        },
+        yaxis: {
+            title: 'RESIDUOS KG'
+        }
+    };
+
+    Plotly.newPlot('grafico3', datos, configuracion);
 });
