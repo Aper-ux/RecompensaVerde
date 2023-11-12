@@ -392,7 +392,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     Plotly.newPlot('grafico11', datos, configuracion);
 });
 
-Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PlasticoTipo.csv", function(err, data) {
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PlasticoProc.csv", function(err, data) {
     if (err) {
         console.error(err);
         return;
@@ -408,7 +408,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     }];
 
     var configuracion = {
-        title: 'Plastico x tipo'
+        title: 'Plastico x procedencia'
     };
 
     Plotly.newPlot('grafico12', datos, configuracion);
