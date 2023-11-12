@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  box-sizing: border-box; /* Añadido para mejorar el box model */
+}
 
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Montserrat';
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 svg{
@@ -14,12 +21,6 @@ svg{
     border-radius: 12px 0px 0px 12px;
 }
 
-body{
-    background-color: #ffffff;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-}
 
 main {
     flex: 1;
@@ -51,18 +52,24 @@ main {
     color: #8CA87C;
 }
 
-.menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 130vh;
-    font-size: 20px;  
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%; /* Cambiado de width a max-width */
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1600px) {
-    .menu{
-        font-size: 14px;
+  .menu {
+      font-size: 14px;
+  }
+}
+/* make navbar responsive */
+@media screen and (max-width: 800px) {
+    .menu {
+        display: none;
     }
 }
 
@@ -137,18 +144,20 @@ a:hover{
 .cabecera h3{
   align-self: first baseline;
 }
-.cardsMenu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    margin: 20px;
-    flex-wrap: wrap;
-    gap: 20px;
+
+.cardsMenu {
+  display: flex;
+  flex-wrap: wrap; /* Añadido para manejar múltiples líneas en pantallas pequeñas */
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%; /* Cambiado de width a max-width */
+  margin: 20px;
+  gap: 20px;
 }
 
-.card{
+.card {
+  width: 100%; /* Cambiado de 25% a 100% para que ocupe el ancho completo en pantallas pequeñas */
+  min-height: auto; /* Cambiado de 350px a auto */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -315,6 +324,7 @@ a:hover{
   font-weight: 600;
   line-height: normal;
   margin: 0;
+  width: auto; /* Cambiado de width: 100% a width: auto */
   min-height: 10px;
   min-width: 0;
   outline: none;
