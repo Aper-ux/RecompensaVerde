@@ -48,8 +48,8 @@
                 <input class="input-style" type="text" name="name" id="name" placeholder="Nombre" required>
             </div>
             <div class="input">
-                <label for="lastname">Apellido</label>
-                <input class="input-style" type="text" name="lastname" id="lastname" placeholder="Apellido" required>
+                <label for="lastname">CI</label>
+                <input class="input-style" type="text" name="lastname" id="ci" placeholder="ci" required>
             </div>
             <div class="input">
                 <label for="email">Correo electrónico</label>
@@ -80,5 +80,61 @@
     <div class="footer">
         <p>©GreenTech Inventors - 2023</p>
     </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyAS3BV3bzJPsLxtFp8mj9i3J3JL6puyKxk",
+          authDomain: "recompensaverde.firebaseapp.com",
+          projectId: "recompensaverde",
+          storageBucket: "recompensaverde.appspot.com",
+          messagingSenderId: "272100518119",
+          appId: "1:272100518119:web:c44474061e841b3a5d1a42",
+          measurementId: "G-QFWQDNQJJ9"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase(app);
+
+        const form = document.querySelector('form');
+        const name = document.getElementById('name');
+        const ci = document.getElementById('ci');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const password2 = document.getElementById('password2');
+        const phone = document.getElementById('phone');
+        const address = document.getElementById('address');
+
+        form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (password.value === password2.value) {
+            try {
+                const usersRef = ref(db, `user/${ci.value}`);
+                
+                const userData = {
+                    nombre: name.value,
+                    ci: ci.value,
+                    email: email.value,
+                    password: password.value,
+                    celular: phone.value,
+                    direccion: address.value
+                };
+
+                await set(usersRef, userData);
+
+                console.log('Usuario registrado con éxito.');
+            } catch (error) {
+                console.error('Error al registrar el usuario: ', error);
+            }
+        } else {
+            console.error('Las contraseñas no coinciden.');
+        }
+    });
+    </script>
 </body>
 </html>
