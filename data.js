@@ -361,3 +361,69 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
 
     Plotly.newPlot('grafico3', datos, configuracion);
 });
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/VidrioTipoNorm.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
+    var datos = [{
+        values: valores,
+        labels: categorias,
+        type: 'pie'
+    }];
+
+    var configuracion = {
+        title: 'Tipos de vidrio'
+    };
+
+    Plotly.newPlot('grafico6', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/VidrioProcNorm.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
+    var datos = [{
+        values: valores,
+        labels: categorias,
+        type: 'pie'
+    }];
+
+    var configuracion = {
+        title: 'Vidrio por procedencia'
+    };
+
+    Plotly.newPlot('grafico7', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/INFECCIOSOS.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
+    var datos = [{
+        values: valores,
+        labels: categorias,
+        type: 'pie'
+    }];
+
+    var configuracion = {
+        title: 'TIPO DE ESTABLECIMIENTO x TOTAL GENERADO KG/DIA'
+    };
+
+    Plotly.newPlot('grafico8', datos, configuracion);
+});
