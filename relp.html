@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recompensa Verde</title>
     <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 80 80" fill="none">
-  <circle cx="40" cy="40" r="32.5" fill="white" stroke="#8CA87C" stroke-width="15"/>
-</svg>
+                <circle cx="40" cy="40" r="32.5" fill="white" stroke="#8CA87C" stroke-width="15"/>
+            </svg>
             <h1>Recompensa Verde</h1>
         </div>
         <div class="menu">
@@ -42,9 +43,34 @@
         <h3 style="font-size: 30px;">Conoce cuánta basura se genera y cuál es el progreso en la clasificación.</h3>
     </div>
 
+    <div class="dashboard">
+        <div class="row">
+            <div id = "grafico1" style="width:600px;height:380px;"></div>
+            <div id = "grafico2" style="width:600px;height:380px;"></div>
+            <div id = "grafico3" style="width:600px;height:380px;"></div>
+                        
+        </div>
+        <div class="row">
+            <div id = "grafico4" style="width:600px;height:380px;"></div>
+            <div id = "grafico5" style="width:600px;height:380px;"></div>
+            <div id = "grafico9" style="width:600px;height:380px;"></div>          
+        </div>
+        <div class="row">
+            <div id = "grafico7" style="width:600px;height:380px;"></div>
+            <div id = "grafico8" style="width:600px;height:380px;"></div>
+            <div id = "grafico6" style="width:600px;height:380px;"></div>          
+        </div>
+        <div class="row">
+            <div id = "grafico10" style="width:600px;height:380px;"></div>
+            <div id = "grafico11" style="width:600px;height:380px;"></div>
+            <div id = "grafico12" style="width:600px;height:380px;"></div>          
+        </div>
+    </div>    
+
     <div class="footer">
         <p>©GreenTech Inventors - 2023</p>
     </div>
     <script src="session.js"></script>
+    <script src="data.js"></script>
 </body>
 </html>

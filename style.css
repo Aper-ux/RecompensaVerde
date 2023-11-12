@@ -277,6 +277,31 @@ a:hover{
     box-shadow: -10px 18px 20px 0px #0000008d;
 }
 
+.grafico{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.containerG{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
+}
+
 .button-28 {
   appearance: none;
   background-color: transparent;
