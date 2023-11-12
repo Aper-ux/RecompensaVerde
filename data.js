@@ -208,3 +208,42 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
 
     Plotly.newPlot('grafico4', datos, configuracion);
 });
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/APURAALEX2.0.csv", function(err, data) {
+    var datos = [
+        {
+            x: data.map(function(d) { return d.SERIE; }),
+            y: data.map(function(d) { return d.COMUNES_KG; }),
+            type: 'scatter',
+            mode: 'lines',
+            name: 'COMUNES_KG',
+            line: {
+                color: 'BLACK',
+                width: 3
+            }
+        },
+        {
+            x: data.map(function(d) { return d.SERIE; }),
+            y: data.map(function(d) { return d.PAPEL_Y_CARTON_KG; }),
+            type: 'scatter',
+            mode: 'lines',
+            name: 'PAPEL_Y_CARTON_KG',
+            line: {
+                color: 'BLUE',
+                width: 3
+            }
+        }
+    ];
+
+    var configuracion = {
+        title: 'Grafica de lineas de tendencia',
+        xaxis: {
+            title: 'TIEMPO'
+        },
+        yaxis: {
+            title: 'RESIDUOS KG'
+        }
+    };
+
+    Plotly.newPlot('grafica4', datos, configuracion);
+});
