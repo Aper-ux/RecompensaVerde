@@ -60,6 +60,12 @@ main {
     font-size: 20px;  
 }
 
+@media screen and (max-width: 1600px) {
+    .menu{
+        font-size: 14px;
+    }
+}
+
 .menu a {
   text-decoration: none;
   margin: 0 25px;
@@ -112,12 +118,25 @@ a:hover{
 }
 
 .insideContainer:hover{
-    background-color: #8ca87ccc;
+    background-color: #deedd6cc;
     color: #3e3e3e;
-    transform: scale(1.06);
+    transform: scale(1.05);
     transition: 0.5s;
 }
 
+.cabecera{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 80%;
+    margin: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.cabecera h3{
+  align-self: first baseline;
+}
 .cardsMenu{
     display: flex;
     flex-direction: row;

@@ -1,7 +1,7 @@
 var m1Element = document.getElementById('m1');
 var m2Element = document.getElementById('m2');
 var m3Element = document.getElementById('m3');
-var m4Element = document.getElementById('m4');
+/* var m4Element = document.getElementById('m4'); */
 var m5Element = document.getElementById('m5');
 
 m1Element.onclick = function() {
@@ -16,9 +16,9 @@ m3Element.onclick = function() {
     document.getElementById('modal3').style.display = 'block';
 }
 
-m4Element.onclick = function() {
+/* m4Element.onclick = function() {
     document.getElementById('modal4').style.display = 'block';
-}
+} */
 
 m5Element.onclick = function() {
     document.getElementById('modal5').style.display = 'block';
@@ -50,8 +50,3 @@ window.onload = function() {
       });
   });
 };
-
-
-
-
-

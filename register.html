@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recompensa Verde</title>
-    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 80 80" fill="none">
-                <circle cx="40" cy="40" r="32.5" fill="black" stroke="#8CA87C" stroke-width="15"/>
-            </svg>
+  <circle cx="40" cy="40" r="32.5" fill="white" stroke="#8CA87C" stroke-width="15"/>
+</svg>
             <h1>Recompensa Verde</h1>
         </div>
         <div class="menu">
@@ -21,16 +21,17 @@
             <a href="relp.html">Residuos en La Paz</a>
             <a href="ep.html">EcoPuntos</a>
             <div class="spacer"></div>
-            <a href="sn.html"><svg xmlns="http://www.w3.org/2000/svg" height="1.4em" viewBox="0 0 320 512"><style>svg{fill:#000000}</style><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg></a>
+            <a href="sn.html"><svg xmlns="http://www.w3.org/2000/svg" height="1.4em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M168 80c-13.3 0-24 10.7-24 24V408c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 480c-39.8 0-72-32.2-72-72V112C0 98.7 10.7 88 24 88s24 10.7 24 24V408c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72H440c39.8 0 72 32.2 72 72V408c0 39.8-32.2 72-72 72H72zM176 136c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24H200c-13.3 0-24-10.7-24-24V136zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg></a>
             <div class="dropdown" id="dropdownContainer">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" id="dropdownIcon">
                     <path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/>
                 </svg>
                 
                 <div class="options" id="dropdownOptions">
-                    <a href="login.html">Iniciar sesión</a>
+                    <a href="login.html" id="user">Iniciar sesión</a>
                     <a href="register.html">Registrarse</a>
-                    <a href="#">Cerrar sesión</a>
+                                        <a href="index.html">Cerrar sesión</a>
+
                 </div>
             </div>
         </div>
@@ -127,14 +128,17 @@
 
                 await set(usersRef, userData);
 
-                console.log('Usuario registrado con éxito.');
+                alert('Usuario registrado con éxito, bienvenido!');
+                window.location.href = 'login.html';
+
             } catch (error) {
                 console.error('Error al registrar el usuario: ', error);
             }
         } else {
-            console.error('Las contraseñas no coinciden.');
+            alert('Las contraseñas no coinciden.');
         }
     });
     </script>
+    <script src="session.js"></script>
 </body>
 </html>
