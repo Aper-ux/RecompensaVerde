@@ -267,7 +267,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
             type: 'bar',
             name: 'Comunes',
             marker: {
-                color: 'red'
+                color: 'purple'
             }
         }
     ];
@@ -283,4 +283,41 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     };
 
     Plotly.newPlot('grafico4', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/HIST.csv", function(err, data) {
+    //make an histogram horizontal with AÑO vs TOTAL_TON_reciclados and TOTAL_TON_comunes
+    
+    var datos = [
+        {
+            x: data.map(function(d) { return d.AÑO; }),
+            y: data.map(function(d) { return d.Ton_CO2_eq_residuos_reciclados; }),
+            type: 'bar',
+            name: 'Reciclados',
+            marker: {
+                color: 'blue'
+            }
+        },
+        {
+            x: data.map(function(d) { return d.AÑO; }),
+            y: data.map(function(d) { return d.Ton_CO2_eq_residuos_comunes; }),
+            type: 'bar',
+            name: 'Comunes',
+            marker: {
+                color: 'purple'
+            }
+        }
+    ];
+
+    var configuracion = {
+        title: 'Grafica de barras',
+        xaxis: {
+            title: 'AÑO'
+        },
+        yaxis: {
+            title: 'RESIDUOS KG'
+        }
+    };
+
+    Plotly.newPlot('grafico5', datos, configuracion);
 });
