@@ -321,3 +321,43 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
 
     Plotly.newPlot('grafico5', datos, configuracion);
 });
+
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/VIDRIO.csv", function(err, data) {
+    var datos = [
+        {
+            x: data.map(function(d) { return d.Mes; }),
+            y: data.map(function(d) { return d.Toneladas; }),
+            type: 'scatter',
+            mode: 'dotted',
+            name: 'Prediccion',
+            line: {
+                color: 'red',
+                width: 3
+            }
+        },
+        {
+            x: data.map(function(d) { return d.Mes_b; }),
+            y: data.map(function(d) { return d.Toneladas_b; }),
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Sin prediccion',
+            line: {
+                color: 'blue',
+                width: 3
+            }
+        }
+    ];
+
+    var configuracion = {
+        title: 'Grafica de lineas de tendencia',
+        xaxis: {
+            title: 'TIEMPO'
+        },
+        yaxis: {
+            title: 'RESIDUOS KG'
+        }
+    };
+
+    Plotly.newPlot('grafico3', datos, configuracion);
+});
