@@ -154,8 +154,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     }
 
     var datos = [{
-        x: data.map(function(d) { return d.MES; }),
-        y: data.map(function(d) { return d.PREDICCION; }),
+        x: data.map(function(d) { return d.Mes; }),
+        y: data.map(function(d) { return d.Toneladas; }),
         type: 'scatter',
         mode: 'lines',
         name: 'PREDICCION',
@@ -168,7 +168,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     var configuracion = {
         title: 'Grafica de lineas de tendencia',
         xaxis: {
-            title: 'TIEMPO'
+            title: 'MES'
         },
         yaxis: {
             title: 'RESIDUOS KG'
