@@ -12,6 +12,22 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 767px) {
+  /* Estilos específicos para dispositivos móviles */
+  * {
+      font-size: 10px!important; /* Tamaño de fuente más pequeño para dispositivos móviles, ajusta según tus necesidades */
+  }
+  img {
+      width: 40%!important; /* Imágenes del tamaño de la pantalla, ajusta según tus necesidades */
+  }
+  svg {
+      width: 50%!important; /* Imágenes del tamaño de la pantalla, ajusta según tus necesidades */
+  }
+  p{
+      font-size: 8px!important; /* Tamaño de fuente más pequeño para dispositivos móviles, ajusta según tus necesidades */
+  }
+  /* Otros estilos específicos para móviles */
+}
 
 svg{
     margin: 10px;
@@ -113,6 +129,8 @@ a:hover{
     box-shadow: 8px 8px 10px 0px #0000008d;   
     transform: scale(1);
     transition: 1.5s;
+    flex-wrap: wrap;
+    gap: 15px
 }
 
 .parrafo{
@@ -147,17 +165,19 @@ a:hover{
 
 .cardsMenu {
   display: flex;
-  flex-wrap: wrap; /* Añadido para manejar múltiples líneas en pantallas pequeñas */
   justify-content: space-around;
   align-items: center;
-  max-width: 100%; /* Cambiado de width a max-width */
+  max-width: 100%; 
   margin: 20px;
   gap: 20px;
+  flex-wrap: wrap;
+  gap: 15px
 }
 
 .card {
   width: 100%; /* Cambiado de 25% a 100% para que ocupe el ancho completo en pantallas pequeñas */
-  min-height: auto; /* Cambiado de 350px a auto */
+  max-height: 1000px; /* Cambiado de 350px a auto */
+  min-width: 150px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -173,6 +193,7 @@ a:hover{
     border: #00000023 1px solid;
     transform: scale(1);
     transition: 1.5s;
+    
 }
 
 .cardOp1{
