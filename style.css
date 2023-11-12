@@ -29,11 +29,9 @@ main {
     background-color: rgb(246, 251, 255);
     height: 65px;
     width: 100%;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
     color: #8CA87C;
     box-shadow: 0px 0px 10px 0px #000000;
 }
@@ -59,7 +57,17 @@ main {
     justify-content: space-around;
     align-items: center;
     width: 130vh;
-    font-size: 25px;    
+    font-size: 20px;  
+}
+
+.menu a {
+  text-decoration: none;
+  color: #8CA87C;
+  margin: 0 25px;
+}
+
+.spacer {
+  flex-grow: 1;
 }
 
 a{
@@ -244,10 +252,10 @@ a:hover{
   font-weight: 600;
   line-height: normal;
   margin: 0;
-  min-height: 30px;
+  min-height: 10px;
   min-width: 0;
   outline: none;
-  padding: 16px 24px;
+  padding: 10px 24px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -372,7 +380,7 @@ a:hover{
   }
 
   .accordion {
-    max-width: 400px;
+    max-width: 1000px;
   }
   
   .accordion-item {
@@ -394,3 +402,94 @@ a:hover{
   .accordion-item.active .accordion-content {
     display: block;
   }
+
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    margin: 0 90px 0 0;
+}
+
+#dropdownIcon {
+    height: 1.4em;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.options a {
+    display: block;
+    padding: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.options a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover #dropdownIcon {
+    transform: rotate(360deg);
+}
+
+.dropdown:hover .options {
+    display: block;
+}
+
+/* Estilo básico para inputs */
+.input-style {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0px 30px 0px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Cambiar el color del borde al hacer hover */
+.input-style:hover {
+  border-color: #8CA87C;
+}
+
+/* Cambiar el color del borde al estar enfocado */
+.input-style:focus {
+  border-color: #8CA87C;
+  box-shadow: 0 0 5px rgba(140, 168, 124, 0.7);
+}
+
+/* Estilo para inputs deshabilitados */
+.input-style:disabled {
+  background-color: #f0f0f0;
+  color: #777;
+  cursor: not-allowed;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 600;
+    color: #8CA87C;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-top: 4vh;
+    border: #8CA87C 1px solid;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ab864217;
+}
