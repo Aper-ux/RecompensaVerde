@@ -347,3 +347,25 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
 
     Plotly.newPlot('grafico9', datos, configuracion);
 });
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PapelProc.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
+    var datos = [{
+        values: valores,
+        labels: categorias,
+        type: 'pie'
+    }];
+
+    var configuracion = {
+        title: 'Papel x procedencia'
+    };
+
+    Plotly.newPlot('grafico9', datos, configuracion);
+});
