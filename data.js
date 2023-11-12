@@ -320,8 +320,30 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     }];
 
     var configuracion = {
-        title: 'Tipo de establecimiento x Total generado KG/DIA'
+        title: 'Infecciosos: Tipo de establecimiento x Total generado KG/DIA'
     };
 
     Plotly.newPlot('grafico8', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PapelTipo.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
+    var datos = [{
+        values: valores,
+        labels: categorias,
+        type: 'pie'
+    }];
+
+    var configuracion = {
+        title: 'Papel x tipo'
+    };
+
+    Plotly.newPlot('grafico9', datos, configuracion);
 });
