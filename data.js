@@ -177,3 +177,34 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
 
     Plotly.newPlot('grafico3', datos, configuracion);
 });
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PREDICCION_ROJO_MES.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var datos = [{
+        x: data.map(function(d) { return d.Mes; }),
+        y: data.map(function(d) { return d.Toneladas; }),
+        type: 'scatter',
+        mode: 'lines',
+        name: 'PREDICCION',
+        line: {
+            color: 'RED',
+            width: 3
+        }
+    }];
+
+    var configuracion = {
+        title: 'Grafica de lineas de tendencia',
+        xaxis: {
+            title: 'MES'
+        },
+        yaxis: {
+            title: 'RESIDUOS KG'
+        }
+    };
+
+    Plotly.newPlot('grafico4', datos, configuracion);
+});
