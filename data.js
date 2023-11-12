@@ -250,12 +250,13 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
 
 Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/HIST.csv", function(err, data) {
     //make an histogram horizontal with AÑO vs TOTAL_TON_reciclados and TOTAL_TON_comunes
+    
     var datos = [
         {
             x: data.map(function(d) { return d.AÑO; }),
             y: data.map(function(d) { return d.TOTAL_TON_reciclados; }),
             type: 'bar',
-            name: 'reciclados',
+            name: 'Reciclados',
             marker: {
                 color: 'blue'
             }
@@ -264,7 +265,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
             x: data.map(function(d) { return d.AÑO; }),
             y: data.map(function(d) { return d.TOTAL_TON_comunes; }),
             type: 'bar',
-            name: 'comunes',
+            name: 'Comunes',
             marker: {
                 color: 'red'
             }
@@ -272,9 +273,9 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     ];
 
     var configuracion = {
-        title: 'Grafica de lineas de tendencia',
+        title: 'Grafica de barras',
         xaxis: {
-            title: 'TIEMPO'
+            title: 'AÑO'
         },
         yaxis: {
             title: 'RESIDUOS KG'
