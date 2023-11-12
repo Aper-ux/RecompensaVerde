@@ -1,8 +1,8 @@
-Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/CLASIFICACION_RESIDUOS_SOLIDOS.csv", function(err, data) {
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/residuos.csv", function(err, data) {
     // Graficar una linea de tendencia 'COMUNES KG' en eje y vs 'GESTION' en eje x
     var datos = [{
       x: data.map(function(d) { return d.GESTION; }),
-      y: data.map(function(d) { return d.COMUNES_KG; }),
+      y: data.map(function(d) { return d.PAPEL_Y_CARTON_KG	; }),
       type: 'scatter',
       mode: 'lines',
       line: {
