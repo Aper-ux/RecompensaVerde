@@ -175,8 +175,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
         }
     };
 
-    Plotly.newPlot('grafico3', datos, configuracion);
-});
+/*     Plotly.newPlot('grafico3', datos, configuracion);
+ */});
 
 Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PREDICCION_ROJO_MES.csv", function(err, data) {
     if (err) {
@@ -206,30 +206,30 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
         }
     };
 
-    Plotly.newPlot('grafico4', datos, configuracion);
-});
+/*     Plotly.newPlot('grafico4', datos, configuracion);
+ */});
 
-Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/APURAALEX2.0.csv", function(err, data) {
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PREDICCION_COMBINADA.csv", function(err, data) {
     var datos = [
         {
-            x: data.map(function(d) { return d.SERIE; }),
-            y: data.map(function(d) { return d.COMUNES_KG; }),
+            x: data.map(function(d) { return d.Mes; }),
+            y: data.map(function(d) { return d.Toneladas; }),
             type: 'scatter',
-            mode: 'lines',
-            name: 'COMUNES_KG',
+            mode: 'dotted',
+            name: 'Prediccion',
             line: {
-                color: 'BLACK',
+                color: 'red',
                 width: 3
             }
         },
         {
-            x: data.map(function(d) { return d.SERIE; }),
-            y: data.map(function(d) { return d.PAPEL_Y_CARTON_KG; }),
+            x: data.map(function(d) { return d.Mes_b; }),
+            y: data.map(function(d) { return d.Toneladas_b; }),
             type: 'scatter',
             mode: 'lines',
-            name: 'PAPEL_Y_CARTON_KG',
+            name: 'Sin prediccion',
             line: {
-                color: 'BLUE',
+                color: 'blue',
                 width: 3
             }
         }
@@ -245,5 +245,41 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
         }
     };
 
-    Plotly.newPlot('grafica4', datos, configuracion);
+    Plotly.newPlot('grafico3', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/HIST.csv", function(err, data) {
+    //make an histogram horizontal with AÑO vs TOTAL_TON_reciclados and TOTAL_TON_comunes
+    var datos = [
+        {
+            x: data.map(function(d) { return d.AÑO; }),
+            y: data.map(function(d) { return d.TOTAL_TON_reciclados; }),
+            type: 'bar',
+            name: 'reciclados',
+            marker: {
+                color: 'blue'
+            }
+        },
+        {
+            x: data.map(function(d) { return d.AÑO; }),
+            y: data.map(function(d) { return d.TOTAL_TON_comunes; }),
+            type: 'bar',
+            name: 'comunes',
+            marker: {
+                color: 'red'
+            }
+        }
+    ];
+
+    var configuracion = {
+        title: 'Grafica de lineas de tendencia',
+        xaxis: {
+            title: 'TIEMPO'
+        },
+        yaxis: {
+            title: 'RESIDUOS KG'
+        }
+    };
+
+    Plotly.newPlot('grafico4', datos, configuracion);
 });
