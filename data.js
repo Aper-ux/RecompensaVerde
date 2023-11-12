@@ -392,7 +392,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     Plotly.newPlot('grafico11', datos, configuracion);
 });
 
-Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/PlasticoProc.csv", function(err, data) {
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/OrganicosTipo.csv", function(err, data) {
     if (err) {
         console.error(err);
         return;
@@ -408,8 +408,30 @@ Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/
     }];
 
     var configuracion = {
-        title: 'Plastico x procedencia'
+        title: 'Organicos x tipo'
     };
 
     Plotly.newPlot('grafico12', datos, configuracion);
+});
+
+Plotly.d3.csv("https://raw.githubusercontent.com/Aper-ux/RecompensaVerde/master/graficas/OrganicosProc.csv", function(err, data) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var categorias = Object.keys(data[0]);
+    var valores = Object.values(data[0]);
+
+    var datos = [{
+        values: valores,
+        labels: categorias,
+        type: 'pie'
+    }];
+
+    var configuracion = {
+        title: 'Organicos x procedencia'
+    };
+
+    Plotly.newPlot('grafico13', datos, configuracion);
 });
